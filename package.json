@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Main.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^2.0.3",
+    "bootstrap": "4.1.0"
+  },
+  "scripts": {
+    "start": "node Main.js"
+  },
+  "engines": {
+    "node": "8.9.4"
+  }
+}
