@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./Index.css">
+    <link rel="stylesheet" type="text/css" href="Index.css">
 
     <title>Hello, world!</title>
 </head>
@@ -26,19 +25,20 @@
 <body>
     <div class="theme-showcase" role="main">
         <div class="page-header">
-            <h1>Proyecto implementación de RSA en JavaScript y NodeJS</h1>
+            <h2>Proyecto Final MSEG-10</h2>
         </div>
         <div class="row">
             <div class="col">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Encriptar</h3>
+                        <h3 class="panel-title">Digite el texto a encriptar</h3>
                     </div>
                     <div class="panel-body">
                         <form action="/encrypt" method="post">
-                            <input type="text" name="data">
+                            <input class="fill-width" type="text" name="data">
                             <br>
-                            <input class="btn btn-primary" type="submit">
+                            <br>
+                            <input class="btn btn-primary" value="Encriptar" type="submit">
                         </form>
                     </div>
                 </div>
@@ -46,13 +46,14 @@
             <div class="col">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Desencriptar</h3>
+                        <h3 class="panel-title">Digite el texto a desencriptar</h3>
                     </div>
                     <div class="panel-body">
                         <form action="/decrypt" method="post">
-                            <input type="text" name="data">
+                            <input class="fill-width" type="text" name="data">
                             <br>
-                            <input class="btn btn-primary" type="submit">
+                            <br>
+                            <input class="btn btn-primary" value="Desencriptar" type="submit">
                         </form>
                     </div>
                 </div>
@@ -62,12 +63,13 @@
 
     </div>
     </div>
+    <div class="page-header">
+        <h2>Mensaje</h2>
+    </div>
     <div class="row">
         <div class="col">
-            <textarea rows="4" cols="50">
-            </textarea>
+            <textarea class="well fill-width" rows="4" cols="50">#result#</textarea>
         </div>
-
     </div>
     </div>
 

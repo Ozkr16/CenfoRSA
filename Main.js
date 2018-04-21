@@ -1,24 +1,41 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
 var http = require('http').Server(app);
 var port = process.env.PORT || 3000;
+var urlencodedParser = bodyParser.urlencoded({
+    extended: false
+})
+var fs = require('fs');
 
-app.post('/encrypt', function(req, res) {
+app.engine('html', function (filePath, options, callback) {
+    fs.readFile(filePath, 'utf8', function (err, content) {
+        if (err) return callback(err)
+        var rendered = content.replace('#result#', options.result);
+        return callback(null, rendered)
+    })
+})
 
-    console.log(req);
-    res.sendFile(__dirname + '/index.html');
+app.post('/encrypt', urlencodedParser, function (req, res) {
+    res.render('index.html', {
+        result: 'Encriptado: ' + req.body.data
+    })
 });
 
-app.post('/decrypt', function(req, res) {
-
-    console.log(req);
-
-    res.sendFile(__dirname + '/index.html');
+app.post('/decrypt', urlencodedParser, function (req, res) {
+    res.render('index.html', {
+        result: 'Desencriptado: ' + req.body.data
+    })
 });
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/index.html');
 });
 
+app.use(express.static('.'));
+app.set('views', './');
+app.set('view engine', 'html');
+
 http.listen(port, function () {
-  console.log('listening on *:' + port);
+    console.log('listening on *:' + port);
 });
