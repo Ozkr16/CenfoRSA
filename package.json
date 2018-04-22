@@ -6,11 +6,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.2",
     "body-parser": "1.18.2",
     "bootstrap": "4.1.0",
-    "jquery": "1.9.1",
-    "popper": "^1.0.1"
+    "express": "^4.15.2",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.14.3"
   },
   "scripts": {
     "start": "node Main.js"
