@@ -7,6 +7,7 @@ var urlencodedParser = bodyParser.urlencoded({
     extended: false
 })
 var fs = require('fs');
+var RSA = require('encriptacion');
 
 app.engine('html', function (filePath, options, callback) {
     fs.readFile(filePath, 'utf8', function (err, content) {
@@ -17,14 +18,16 @@ app.engine('html', function (filePath, options, callback) {
 })
 
 app.post('/encrypt', urlencodedParser, function (req, res) {
+    var encryptedInput = RSA.RSAEncrypt(req.body.data);
     res.render('index.html', {
-        result: 'Encriptado: ' + req.body.data
+        result: 'Encriptado: ' + encryptedInput
     })
 });
 
 app.post('/decrypt', urlencodedParser, function (req, res) {
+    var plaintext = RSA.RSADecrypt(req.body.data);
     res.render('index.html', {
-        result: 'Desencriptado: ' + req.body.data
+        result: 'Desencriptado: ' + plaintext
     })
 });
 
