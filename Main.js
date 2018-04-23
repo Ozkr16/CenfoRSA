@@ -17,6 +17,7 @@ var port = process.env.PORT || 3000;
 //Constants
 const MAX_STRING_SIZE = 4096
 
+// p 11 q 47 k 10121  
 //Naive funtion that checks the validity of a strings
 function isValidString(stringValue) {
     if (stringValue && typeof stringValue === 'string' && stringValue.length < MAX_STRING_SIZE) {
