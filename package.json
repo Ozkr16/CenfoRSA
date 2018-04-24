@@ -14,7 +14,8 @@
     "popper.js": "^1.14.3"
   },
   "scripts": {
-    "start": "node Main.js"
+    "start": "node Main.js",
+    "test": "mocha"
   },
   "engines": {
     "node": "8.9.4"
